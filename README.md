@@ -19,7 +19,7 @@
 | :--- | :--- | :--- |
 | **Service Type** | **Web Service** | Hosted container running Express.js |
 | **Name** | `backend-development-fundamentals-lab-02` | Unique application identifier |
-| **Root Directory** | `lab-02` | Ensures Render builds inside the lab-02 directory |
+| **Root Directory** | *(Leave blank / default)* | `package.json` and `server.js` are at the repository root |
 | **Runtime** | `Node` | Native Node.js execution runtime |
 | **Build Command** | `npm install` | Installs express, sqlite, sqlite3, and nodemon |
 | **Start Command** | `npm start` | Executes `node server.js` |
@@ -34,36 +34,24 @@ Add this key-value pair under the **Environment Variables** tab in your Render d
 
 ---
 
-### Important SQLite Persistence Notice (Render Free Tier)
-
-> **Architectural Consideration:**  
-> SQLite is a local, embedded file-based database (`books.db`).  
-> On the **Render Free Tier**, web services run inside **ephemeral / stateless containers**:
-> - Whenever the free web service spins down due to inactivity, restarts, or receives a new code deployment, the container's local file system is wiped clean and re-provisioned from your Git repository.
-> - While data created during a session persists while the container is actively warm, newly created records (`POST`), updates (`PUT`), or deletions (`DELETE`) made during runtime will be reset to the committed `books.db` state upon container recreation.
-> - **Production Solution:** If permanent write-persistence is required on Render, attach a paid **Render Disk** or migrate to a hosted client-server database such as PostgreSQL. For this laboratory assignment, SQLite is strictly preserved, and `server.js` contains auto-provisioning logic to ensure the schema and initial 10 records are always available on container spin-up.
-
----
-
 ### Step-by-Step Render Deployment Instructions
 
-Follow these steps to deploy Lab 02 to Render:
+Follow these simple steps to deploy Lab 02 to Render:
 
 1. **Sign in to Render:** Go to [dashboard.render.com](https://dashboard.render.com/) and log in using your GitHub account (`prasannakumar0718`).
 2. **Create New Web Service:** Click **New +** → **Web Service**.
-3. **Connect Repository:** Select your repository: `prasannakumar0718/Backend_development_fundamentals_lab`.
-4. **Configure Settings:**
-   - **Name:** `backend-development-fundamentals-lab-02`
-   - **Root Directory:** `lab-02` *(Essential: tells Render to build inside the lab-02 folder)*
-   - **Runtime:** `Node`
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start`
-   - **Plan:** `Free`
+3. **Connect Repository:** Select your dedicated Lab 02 repository: **`prasannakumar0718/Backend_development_fundamentals_lab_02`**.
+4. **Settings:**
+   - Render automatically detects Node.js!
+   - Root Directory: *(Leave blank)*
+   - Build Command: `npm install`
+   - Start Command: `npm start`
+   - Plan: `Free`
 5. **Set Environment Variable:**
-   - In the **Environment Variables** section, click **Add Environment Variable**.
-   - Key: `NODE_ENV`, Value: `production`.
+   - In **Environment Variables**, add:
+     - Key: `NODE_ENV`, Value: `production`.
 6. **Deploy:** Click **Create Web Service**. Wait 1–2 minutes for the build to finish.
-7. **Verify Public URL:** Once the service status turns to `Live`, copy the assigned URL (e.g., `https://backend-development-fundamentals-lab-02.onrender.com`).
+7. **Verify Public URL:** Once the service shows **`Live`**, copy the assigned URL (e.g., `https://backend-development-fundamentals-lab-02.onrender.com`).
 8. **Test Live Endpoints:**
    - Root Health: `GET https://[YOUR_RENDER_URL]/` → returns `"Book Store API is running."`
    - All Books: `GET https://[YOUR_RENDER_URL]/books/` → returns array of 10 books.
