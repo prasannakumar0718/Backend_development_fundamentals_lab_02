@@ -10,8 +10,9 @@
 ## Deployment Information & Render Guide
 
 - **Platform:** [Render](https://render.com/) (Web Service)
-- **Live Deployment URL:** `[YOUR_RENDER_URL]` *(Update with your live URL once deployed, e.g. `https://backend-development-fundamentals-lab-02.onrender.com`)*
-- **Current Deployment Status:** `PREPARED (PENDING DASHBOARD SETUP)`
+- **Live Deployment URL:** [https://backend-development-fundamentals-lab-02-2oy3.onrender.com](https://backend-development-fundamentals-lab-02-2oy3.onrender.com)
+- **Current Deployment Status:** `LIVE & VERIFIED` (HTTP 200 OK across all CRUD endpoints)
+- **GitHub Repository:** [prasannakumar0718/Backend_development_fundamentals_lab_02](https://github.com/prasannakumar0718/Backend_development_fundamentals_lab_02)
 
 ### Render Dashboard Recommended Settings
 
@@ -53,9 +54,9 @@ Follow these simple steps to deploy Lab 02 to Render:
 6. **Deploy:** Click **Create Web Service**. Wait 1–2 minutes for the build to finish.
 7. **Verify Public URL:** Once the service shows **`Live`**, copy the assigned URL (e.g., `https://backend-development-fundamentals-lab-02.onrender.com`).
 8. **Test Live Endpoints:**
-   - Root Health: `GET https://[YOUR_RENDER_URL]/` → returns `"Book Store API is running."`
-   - All Books: `GET https://[YOUR_RENDER_URL]/books/` → returns array of 10 books.
-   - Single Book: `GET https://[YOUR_RENDER_URL]/books/1/` → returns book 1.
+   - Root Health: `GET https://backend-development-fundamentals-lab-02-2oy3.onrender.com/` → returns `"Book Store API is running."`
+   - All Books: `GET https://backend-development-fundamentals-lab-02-2oy3.onrender.com/books/` → returns array of 10 books.
+   - Single Book: `GET https://backend-development-fundamentals-lab-02-2oy3.onrender.com/books/1/` → returns book 1.
 
 ---
 
