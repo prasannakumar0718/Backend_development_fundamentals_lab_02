@@ -2,8 +2,8 @@
 
 ## Student Information
 - **Student Name:** Myadaboina Prasanna Kumar
-- **Registration Number:** [YOUR_REGISTRATION_NUMBER]
-- **Section:** [YOUR_SECTION]
+- **Registration Number:** 252U1R9103
+- **Section:** GENAI-2B
 
 ---
 
