@@ -1,0 +1,11 @@
+# Render Blueprint Configuration for Lab 02 Standalone
+services:
+  - type: web
+    name: backend-development-fundamentals-lab-02
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
